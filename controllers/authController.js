@@ -20,23 +20,36 @@ exports.login = async (req, res) => {
     try {
         const user = await User.findOne({ where: { email } });
         if (!user) {
-            console.log('User  not found');
-            return res.status(404).json({ error: 'User  not found' });
+            console.log('User not found');
+            return res.status(404).json({ error: 'User not found' });
         }
 
-        console.log('User  found:', user); // Log user details (hindari menampilkan password)
+        console.log('User found:', user);
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
-        console.log('Password valid:', isPasswordValid); // Log hasil validasi password
-
         if (!isPasswordValid) {
             return res.status(401).json({ error: 'Invalid password' });
         }
 
         const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: '1h' });
-        res.status(200).json({ message: 'Login successful', token });
+
+        // Simpan token di session
+        req.session.user = { id: user.id, name: user.name }; // Atur session dengan nama pengguna
+
+        res.redirect('/'); // Redirect ke halaman welcome
     } catch (error) {
-        console.error('Error logging in:', error); // Log error
+        console.error('Error logging in:', error);
         res.status(500).json({ error: 'Error logging in' });
     }
 };
+
+exports.logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error logging out:', err);
+            return res.status(500).json({ error: 'Error logging out' });
+        }
+        res.redirect('/login?logout=success'); // Redirect ke login setelah logout
+    });
+};
+

@@ -1,5 +1,22 @@
-<div class="navbar">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/info">Info</a>
-</div>
+<header class="bg-light">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <a href="/index.html" class="d-flex align-items-center">
+            <img src="/assets/images/logo.png" alt="Logo" style="height: 50px;">
+        </a>
+        <nav class="nav">
+            <a class="nav-link text-dark" href="/index.html">Home</a>
+            <a class="nav-link text-dark" href="/about.html">About</a>
+            <a class="nav-link text-dark" href="/contact.html">Contact</a>
+            <a class="nav-link text-dark" href="/subscribe.html">Subscribe</a>
+
+            <% if (user) { %>
+                <!-- Jika user sudah login -->
+                <span class="nav-link text-dark">Hello, <%= user.name %></span>
+                <a class="nav-link text-dark" href="/logout">Logout</a>
+            <% } else { %>
+                <!-- Jika user belum login -->
+                <a class="nav-link text-dark" href="/login">Login</a>
+            <% } %>
+        </nav>
+    </div>
+</header>

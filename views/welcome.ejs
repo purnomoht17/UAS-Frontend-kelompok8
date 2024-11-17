@@ -1,14 +1,154 @@
 <%- include ('layout/header') %>
 <%- include ('layout/navbar') %>
-    <h1>Welcome to the Application!</h1>
-    <p>This is the welcome page.</p>
 
-    <!-- Tautan ke halaman login dan signup -->
-    <nav>
-        <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-        </ul>
-    </nav>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/images/mount1.jpg" class="d-block w-100" alt="Mount 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Haiku Stairs, Kaneohe, United States</h5>
+                <p>Mountain hiking sunset follow @kalenemsley on ig.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/mount2.jpg" class="d-block w-100" alt="Mount 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Pali Notches, United States</h5>
+                <p>Scaling a mountain peak.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/mount3.jpg" class="d-block w-100" alt="Mount 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Cypress Falls Park, West Vancouver, Canada</h5>
+                <p>A pair of hiking boots and a backpack sit on a bed of rocks, ready for adventure.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/mount4.jpg" class="d-block w-100" alt="Mount 4">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Cypress Falls Park, West Vancouver, Canada</h5>
+                <p>Silhouettes of people enjoying a hike on a bright sunny day.</p>
+            </div>
+        </div>
+        
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container py-5">
+    <% if (user) { %>
+        <h1 class="fw-bold text-center">Welcome to the Lifestyle Hub, <%= user.name %>!</h1>
+    <% } else { %>
+        <h1 class="fw-bold text-center">Welcome to the Lifestyle Hub, Guest!</h1>
+    <% } %>
+    <p class="text-center">Glad to have you here.</p>
+    <p class="text-justify">Lifestyle is all about finding balance, embracing health, and living in the moment. Whether you're into fitness, mindfulness, or just looking to elevate your daily routines, you've come to the right place.</p>
+</div>
+
+<div>
+    <!-- Waktu Sistem Saat Ini -->
+    <div class="text-center">
+        <p id="current-time" class="fw-bold"></p> <!-- Menampilkan waktu saat ini -->
+    </div>
+</div>
+
+<div class="bg-light py-1">
+    <div class="container">
+        <h3 class="fw-bold text-center mb-4">Discover the Outdoors</h3>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Explore New Trails</h5>
+                        <p class="card-text">Discover breathtaking hiking trails and outdoor adventures tailored to all experience levels.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Gear Up</h5>
+                        <p class="card-text">Get the best gear recommendations to make your hiking experience safe and enjoyable.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Connect with Nature</h5>
+                        <p class="card-text">Embrace mindfulness and reconnect with nature as you explore the great outdoors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials -->
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="fw-bold text-center">What Our Adventurers Say</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"The trails and tips I found here transformed my outdoor adventures! Highly recommended."</p>
+                    <footer class="blockquote-footer">John, Hiking Enthusiast</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"I've never felt more connected with nature. The gear guides were a life-saver!"</p>
+                    <footer class="blockquote-footer">Emily, Nature Lover</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"The best resource for anyone who loves hiking and adventure. Fantastic community!"</p>
+                    <footer class="blockquote-footer">Mike, Adventure Seeker</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="py-5" style="background-color: #d8d8d8;">
+    <div class="container text-center">
+        <h2 class="fw-bold">Join Our Community</h2>
+        <p>Get the latest updates, guides, and tips for your next adventure. Sign up now!</p>
+        
+        <!-- Alert -->
+        <div id="subscribeAlert" class="alert alert-success d-none" role="alert">
+            You have successfully subscribed!
+        </div>
+
+        <form class="d-flex justify-content-center mb-3" onsubmit="return showAlert(event);">
+            <div class="me-2">
+                <input type="text" class="form-control" placeholder="First Name" required>
+            </div>
+            <div class="me-2">
+                <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <button type="submit" class="btn btn-light">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<%- include ('layout/footer') %>
+
 </body>
 </html>
