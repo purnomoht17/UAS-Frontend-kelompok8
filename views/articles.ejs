@@ -1,0 +1,31 @@
+<%- include('layout/header') %>
+<%- include('layout/navbar') %>
+
+<div class="container">
+    <h2 class="fw-bold text-center mb-4"><%= tour.name %></h2>
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Gambar Cover Tour -->
+            <img src="/assets/images/tours/<%= tour.image_cover %>" alt="<%= tour.name %>" class="img-fluid mb-3">
+
+            <!-- Detail Deskripsi Tour -->
+            <p><strong>Description:</strong> <%= tour.description %></p>
+            <p><strong>Duration:</strong> <%= tour.duration %> days</p>
+            <p><strong>Price:</strong> $<%= tour.price %></p>
+            <p><strong>Max Group Size:</strong> <%= tour.max_group_size %></p>
+            <p><strong>Average Rating:</strong> <%= tour.ratings_average %> (based on <%= tour.ratings_quantity %> reviews)</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Tour Information</h4>
+            <p><strong>Difficulty:</strong> <%= tour.difficulty %></p>
+            <p><strong>Start Dates:</strong></p>
+            <ul>
+                <% tour.start_dates.forEach(date => { %>
+                    <li><%= date %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

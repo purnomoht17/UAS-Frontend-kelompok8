@@ -1,0 +1,84 @@
+<%- include ('layout/header') %>
+<%- include ('layout/navbar') %>
+
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h1 class="fw-bold">About Us</h1>
+        <p class="lead">We are a community of outdoor enthusiasts committed to sharing experiences and knowledge about outdoor adventures.</p>
+    </div>
+</div>
+
+<!-- Our Mission -->
+<div class="bg-light py-3">
+    <div class="container text-center">
+        <h2 class="fw-bold">Our Mission</h2>
+        <p class="text-justify">
+            Our mission is to inspire individuals of all ages to forge a deeper connection with nature by creating unforgettable outdoor experiences that foster personal growth and well-being. We are dedicated to promoting an active lifestyle through diverse activities such as hiking, camping, and various outdoor sports. Our belief is rooted in the idea that adventures in the great outdoors not only enrich our lives by providing joy and a sense of freedom but also play a crucial role in building a better, more connected community. By encouraging exploration and appreciation of the natural world, we aim to cultivate a sense of stewardship for our environment, ensuring that future generations can enjoy the same beautiful landscapes and outdoor adventures that we cherish today.
+        </p>
+    </div>
+</div>
+
+<!-- Meet the Team -->
+<div class="bg-light py-3">
+    <div class="container">
+        <h2 class="fw-bold text-center">Meet the Team</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 text-center">
+                <div class="card shadow-sm">
+                    <img src="assets/images/web/team1.jpg" class="card-img-top" alt="Team Member 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Alexandra Smith</h5>
+                        <p class="card-text">Founder & CEO</p>
+                        <p class="text-muted">Nature lover and adventurer with over 10 years of experience in the industry.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card shadow-sm">
+                    <img src="assets/images/web/team2.jpg" class="card-img-top" alt="Team Member 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Michael Johnson</h5>
+                        <p class="card-text">Head of Product Development</p>
+                        <p class="text-muted">Expert in outdoor gear and user experience design.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card shadow-sm">
+                    <img src="assets/images/web/team3.jpg" class="card-img-top" alt="Team Member 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofia Williams</h5>
+                        <p class="card-text">Community Manager</p>
+                        <p class="text-muted">Community advocate ready to help members find new adventures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="py-5" style="background-color: #d8d8d8;">
+    <div class="container text-center">
+        <h2 class="fw-bold">Join Our Community</h2>
+        <p>Get the latest updates, guides, and tips for your next adventure. Sign up now!</p>
+        
+        <div id="subscribeAlert" class="alert alert-success d-none" role="alert">
+            You have successfully subscribed!
+        </div>
+        <form class="d-flex justify-content-center mb-3" onsubmit="showAlert(event)">
+            <div class="me-2">
+                <input type="text" class="form-control" placeholder="First Name" required>
+            </div>
+            <div class="me-2">
+                <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <button type="submit" class="btn btn-light">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<%- include ('layout/footer') %>
+
+</body>
+</html>
